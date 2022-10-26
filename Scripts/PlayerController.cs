@@ -20,11 +20,23 @@ public class PlayerController : MonoBehaviour
         else{
             player.SetActive(false);
         }
+
     }
 
     void moveCharacter(){
         float x = playerController.transform.position[0];
-        Vector3 position = new Vector3(x, -2.45f, 7.08f);
-        player.transform.position = position;
+
+        float offset = 0.3f;
+        Debug.Log("face position" + playerController.transform.position);
+        
+        if(player.transform.position[0] > 2.22f)
+            x = 2.22f + offset;
+
+        if(player.transform.position[0] < 1.05f)    
+            x = 1.05f + offset;
+        
+        player.transform.position = new Vector3(x - offset, 3.76f, 0f);
+        Debug.Log("player position" + player.transform.position);
+        
     }
 }
