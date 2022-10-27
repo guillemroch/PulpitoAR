@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -65,5 +66,9 @@ public class GameManager : MonoBehaviour
             }
             gameOver.SetActive(true);
         }
+    }
+
+    public void exit(){
+        SceneManager.LoadScene (sceneBuildIndex:0);
     }
 }

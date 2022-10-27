@@ -1,18 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.XR.ARFoundation;
 
 public class ARCursor : MonoBehaviour
 {
-    public GameObject cursorChildObject;
-    public GameObject objectToPlace;
-    public ARRaycastManager raycastManager;
 
-    public bool useCursor = true;
+    public UnityEvent objectSpawned;
+
+    [SerializeField]
+    private GameObject cursorChildObject;
+    [SerializeField]
+    private GameObject objectToPlace;
+    [SerializeField]
+    private ARRaycastManager raycastManager;
+
+    private bool useCursor = true;
 
     void Start()
     {
+        useCursor = true;
         cursorChildObject.SetActive(useCursor);
     }
 
@@ -28,6 +36,7 @@ public class ARCursor : MonoBehaviour
             if (useCursor)
             {
                 GameObject.Instantiate(objectToPlace, transform.position, transform.rotation);
+                objectSpawned.Invoke();
             }
             else
             {
@@ -36,6 +45,7 @@ public class ARCursor : MonoBehaviour
                 if (hits.Count > 0)
                 {
                     GameObject.Instantiate(objectToPlace, hits[0].pose.position, hits[0].pose.rotation);
+                    objectSpawned.Invoke();
                 }
             }
         }

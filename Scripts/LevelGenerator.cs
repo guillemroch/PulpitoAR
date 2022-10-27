@@ -12,7 +12,6 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] private float minY = .2f;
     [SerializeField] private float maxY = 1.5f;
 
-    // Start is called before the first frame update
     public void generateLevel()
     {
         Vector3 spawnPosition = transform.position;
@@ -30,5 +29,7 @@ public class LevelGenerator : MonoBehaviour
             platform.layer = platforms.layer;
         }
     }
+
+    
 
 }
