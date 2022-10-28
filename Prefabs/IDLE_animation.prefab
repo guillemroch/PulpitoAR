@@ -550,9 +550,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7968981876097944772}
   - component: {fileID: 9114114645609778675}
+  - component: {fileID: 6332112453245702428}
   m_Layer: 0
   m_Name: IDLE_animation
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -565,8 +566,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4519153348144616834}
   m_LocalRotation: {x: -0, y: 0.7052435, z: -0, w: 0.7089652}
-  m_LocalPosition: {x: -0.3, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalPosition: {x: -0.31517, y: -0.050995, z: 0.0095767}
+  m_LocalScale: {x: 0.031941, y: 0.031941, z: 0.031941}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1007145054388462414}
@@ -594,6 +595,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &6332112453245702428
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4519153348144616834}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 13.349688, y: 7.2077804, z: 14.494985}
+  m_Center: {x: -0.40412512, y: -0.14817327, z: -0.061097506}
 --- !u!1 &4540665785037790344
 GameObject:
   m_ObjectHideFlags: 0
