@@ -59,7 +59,9 @@ public class InteractionSystem : MonoBehaviour
             if (hit2.collider != null) {
                 if (hit2.collider.gameObject.tag == "Food") {
                     UnityEngine.Debug.Log("Food");
-                    playerAnimation.SetTrigger("Eat");
+                    //playerAnimation.SetTrigger("Eat");
+                    var anim = hit2.collider.gameObject.transform.GetComponent<Animation>();
+                    anim.Play();
                 }  
             }
         }
@@ -70,7 +72,7 @@ public class InteractionSystem : MonoBehaviour
             DetectObject();
         }
         double time = sw.Elapsed.TotalMilliseconds/1000;
-        UnityEngine.Debug.Log($"Tiempo: {time} ms");
+        //UnityEngine.Debug.Log($"Tiempo: {time} ms");
 
         if(time >= 10.0){
             sleep();

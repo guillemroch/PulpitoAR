@@ -43,6 +43,7 @@ public class FoodVisualizer : MonoBehaviour
         for (int i = 0; i < food.Count ; i++)
             food[i].SetActive(false);
 
+        //food[current].transform.GetComponent<Animation>().Stop();
         food[current].SetActive(true);
         sw.Restart();
         }
@@ -60,6 +61,8 @@ public class FoodVisualizer : MonoBehaviour
         for (int i = 0; i < food.Count ; i++)
             food[i].SetActive(false);
 
+        //food[current].transform.GetComponent<Animation>().Stop();
+        //food[current].transform.GetComponent<Animation>().Rewind(); 
         food[current].SetActive(true);
         sw.Restart();
         }
