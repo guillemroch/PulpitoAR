@@ -11,7 +11,7 @@ public class InteractionSystem : MonoBehaviour
 
     [SerializeField] private Camera secondCamera;
 
-    private Animator playerAnimation;
+    private animationController playerAnimation;
 
     private Inputs inputs;
 
@@ -41,14 +41,14 @@ public class InteractionSystem : MonoBehaviour
                     if(pet[0] != 0 || pet[1] != 0){
                         UnityEngine.Debug.Log("Petting");
                         //if(playerAnimation.GetBool("isPoked") == false)
-                        playerAnimation.SetTrigger("IsPet");
+                        playerAnimation.setPetting();
                         sw.Restart();
                     }
-                    else{
+                    /*else{
                         UnityEngine.Debug.Log(hit.collider);
                         playerAnimation.SetTrigger("IsPoked");
                         sw.Restart();
-                    }
+                    }*/
                 }  
             }
         }
@@ -62,6 +62,7 @@ public class InteractionSystem : MonoBehaviour
                     //playerAnimation.SetTrigger("Eat");
                     var anim = hit2.collider.gameObject.transform.GetComponent<Animation>();
                     anim.Play();
+                    playerAnimation.setEating();
                 }  
             }
         }
@@ -71,22 +72,22 @@ public class InteractionSystem : MonoBehaviour
         if(inputs.Interaction.Poke.ReadValue<float>() > 0f){
             DetectObject();
         }
-        double time = sw.Elapsed.TotalMilliseconds/1000;
+        /*double time = sw.Elapsed.TotalMilliseconds/1000;
         //UnityEngine.Debug.Log($"Tiempo: {time} ms");
 
         if(time >= 10.0){
             sleep();
-        }
+        }*/
     }
 
     public void setAnimator(){
-        playerAnimation = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
+        playerAnimation = GameObject.FindGameObjectWithTag("Player").GetComponent<animationController>();
     }
 
-    private void sleep(){
+    /*private void sleep(){
         if(playerAnimation != null)
             playerAnimation.SetTrigger("Sleep");
             UnityEngine.Debug.Log("Sleep");
-    }
+    }*/
 
 }

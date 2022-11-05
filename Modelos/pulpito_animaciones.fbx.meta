@@ -4,18 +4,6 @@ ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
   - first:
-      74: -7319435429439651320
-    second: Swimming
-  - first:
-      74: -3100369314251171874
-    second: Idle
-  - first:
-      74: 2530875414512321751
-    second: Eat
-  - first:
-      74: -4590039189748022572
-    second: Tap
-  - first:
       74: 7266449812806439930
     second: Pulpito_Armature|Eat
   - first:
